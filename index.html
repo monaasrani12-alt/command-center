@@ -1603,6 +1603,17 @@ function renderJobs(){
     return true;
   });
 
+  // Sort by date — newest first
+  filtered.sort(function(a,b){
+    function parseJobDate(str){
+      if(!str) return 0;
+      var clean = str.replace(/(st|nd|rd|th)/g,'').trim();
+      var d = new Date(clean + ' 2026');
+      return isNaN(d.getTime()) ? 0 : d.getTime();
+    }
+    return parseJobDate(b.date) - parseJobDate(a.date);
+  });
+
   var tbody = document.getElementById('jobs-tbody');
   if(!tbody) return;
   tbody.innerHTML = filtered.map(function(e,i){
@@ -1978,6 +1989,12 @@ function deleteContentRow(id){
 function renderContentLog(){
   var tbody = document.getElementById('content-tbody');
   if(!tbody) return;
+  // Sort by date — newest first
+  contentEntries.sort(function(a,b){
+    var da = a.date ? new Date(a.date).getTime() : 0;
+    var db = b.date ? new Date(b.date).getTime() : 0;
+    return db - da;
+  });
   tbody.innerHTML = contentEntries.map(function(e,i){
     var stCls = e.status==='Posted'?'posted':(e.status==='Draft'?'draft':'sc');
     var platLbl = e.platform==='Instagram'?'IG':(e.platform==='Both'?'B':'in');
