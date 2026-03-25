@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mona CC">
+<meta name="theme-color" content="#080d16">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23c9a84c' width='100' height='100' rx='20'/><text x='50' y='68' text-anchor='middle' font-size='55' font-weight='bold' fill='%23080d16'>M</text></svg>">
 <title>Mona Asrani — Command Centre</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- Firebase SDK (compat) -->
@@ -229,6 +234,39 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--cream);min-heigh
 .ct-li{background:rgba(0,119,181,0.15);color:#5abaff;border:1px solid rgba(0,119,181,0.2)}
 .ct-ig{background:rgba(193,53,132,0.1);color:#e06090;border:1px solid rgba(193,53,132,0.2)}
 
+/* ── BRAIN DUMP ── */
+.bd-input-area{width:100%;min-height:50px;max-height:120px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:12px 14px;font-family:var(--font-b);font-size:0.82rem;color:var(--cream);outline:none;resize:none;line-height:1.6}
+.bd-input-area:focus{border-color:var(--gold)}
+.bd-input-area::placeholder{color:var(--muted2)}
+.bd-cat-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.bd-chip{padding:7px 16px;border-radius:20px;font-size:0.7rem;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--muted);transition:all 0.15s}
+.bd-chip.on{background:var(--gold3);border-color:var(--gold-b);color:var(--gold)}
+.bd-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:10px;position:relative;transition:all 0.2s}
+.bd-card:hover{border-color:var(--border2)}
+.bd-card-cat{font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:8px}
+.bd-cat-task{background:rgba(76,175,130,0.1);color:#4caf82;border:1px solid rgba(76,175,130,0.2)}
+.bd-cat-post{background:rgba(0,119,181,0.1);color:#5abaff;border:1px solid rgba(0,119,181,0.2)}
+.bd-cat-note{background:rgba(201,168,76,0.08);color:var(--gold);border:1px solid var(--gold-b)}
+.bd-cat-reminder{background:rgba(199,112,208,0.1);color:#c770d0;border:1px solid rgba(199,112,208,0.2)}
+.bd-card-text{font-size:0.78rem;color:var(--cream);line-height:1.6;margin-bottom:6px}
+.bd-card-meta{font-size:0.6rem;color:var(--muted2)}
+.bd-card-actions{position:absolute;top:12px;right:12px;display:flex;gap:4px}
+.bd-card-btn{background:var(--bg3);border:1px solid var(--border2);color:var(--muted2);border-radius:5px;padding:2px 8px;font-size:0.56rem;cursor:pointer;font-family:var(--font-b)}
+.bd-card-btn:hover{border-color:var(--gold-b);color:var(--gold)}
+.bd-card-btn.done-btn{background:rgba(76,175,130,0.08);border-color:rgba(76,175,130,0.2);color:#4caf82}
+.bd-card-edit{width:100%;background:var(--bg3);border:1px solid var(--gold-b);border-radius:8px;padding:8px 12px;font-family:var(--font-b);font-size:0.78rem;color:var(--cream);outline:none;resize:vertical;min-height:40px}
+.bd-send-btn{padding:9px 20px;background:linear-gradient(135deg,var(--gold),#b8943e);color:var(--bg);border:none;border-radius:8px;font-family:var(--font-b);font-size:0.78rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.bd-quick-row{display:flex;gap:10px;align-items:flex-end}
+.bd-today-banner{background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(8,13,22,0));border:1px solid var(--gold-b);border-radius:16px;padding:22px 24px;margin-bottom:22px}
+.bd-today-title{font-family:var(--font-d);font-size:1.15rem;color:var(--cream);margin-bottom:4px}
+.bd-today-sub{font-size:0.65rem;color:var(--muted)}
+.notif-banner{position:fixed;top:70px;right:20px;background:var(--bg2);border:1px solid var(--gold-b);border-radius:14px;padding:18px 22px;max-width:360px;z-index:300;box-shadow:0 8px 32px rgba(0,0,0,0.5);display:none;animation:slideIn 0.3s ease}
+@keyframes slideIn{from{transform:translateX(100px);opacity:0}to{transform:translateX(0);opacity:1}}
+.notif-banner .notif-title{font-family:var(--font-d);font-size:1rem;color:var(--gold);margin-bottom:6px}
+.notif-banner .notif-body{font-size:0.72rem;color:var(--cream);line-height:1.6}
+.notif-banner .notif-close{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--muted2);cursor:pointer;font-size:0.9rem}
+.whatsapp-setup{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:16px 18px;margin-top:16px}
+
 .bnav{display:none}
 @media(max-width:768px){.bnav{display:flex}}
 </style>
@@ -257,6 +295,9 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--cream);min-heigh
   </button>
   <button class="nav" id="n-tasks" onclick="go('tasks',this)">
     <span class="ic">&#9989;</span><span class="lb">Tasks</span>
+  </button>
+  <button class="nav" id="n-brain" onclick="go('brain',this)">
+    <span class="ic">&#129504;</span><span class="lb">Brain</span>
   </button>
   <button class="nav" id="n-profile" onclick="go('profile',this)">
     <span class="ic">&#128196;</span><span class="lb">Profile</span>
@@ -317,6 +358,15 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--cream);min-heigh
         <div class="ci">CV / Resume</div>
         <div class="ci">ADM Licence No.</div>
         <div class="ci">Portfolio Link</div>
+      </div>
+      <div class="card" onclick="go('brain',document.getElementById('n-brain'))">
+        <span class="badge ba">ACTIVE</span>
+        <span class="em">&#129504;</span>
+        <div class="cn">Brain Dump</div>
+        <div class="cd">Quick-capture tasks, posts, notes &amp; reminders. Daily 9 AM &amp; 9 PM alerts.</div>
+        <div class="ci">Quick Capture Pad</div>
+        <div class="ci">WhatsApp Reminders</div>
+        <div class="ci">Morning Briefing</div>
       </div>
     </div>
     <div class="grid2">
@@ -893,7 +943,7 @@ function go(id, btn) {
   var navs = document.querySelectorAll('.nav');
   for (var j = 0; j < navs.length; j++) navs[j].classList.remove('on');
   if (btn) btn.classList.add('on');
-  var t = {home: 'Welcome back, Mona \u2736', tx: 'Transaction Dashboard', re: 'Real Estate Hub', dance: 'Dance & Fitness Hub \ud83d\udc83', content: 'Content Studio', profile: 'My Profile', jobs: 'Job Application Tracker \ud83d\udcbc', tasks: 'Daily Task Tracker \u2705'};
+  var t = {home: 'Welcome back, Mona \u2736', tx: 'Transaction Dashboard', re: 'Real Estate Hub', dance: 'Dance & Fitness Hub \ud83d\udc83', content: 'Content Studio', profile: 'My Profile', jobs: 'Job Application Tracker \ud83d\udcbc', tasks: 'Daily Task Tracker \u2705', brain: 'Brain Dump \ud83e\udde0'};
   document.getElementById('ttl').textContent = t[id] || 'Mona Asrani';
 }
 
@@ -1418,6 +1468,96 @@ function closeDoc() {
 
 </div>
 
+<!-- BRAIN DUMP PAGE -->
+<div class="page" id="page-brain">
+  <!-- Today's Banner -->
+  <div class="bd-today-banner">
+    <div class="bd-today-title">&#9728;&#65039; Good Morning, Mona</div>
+    <div class="bd-today-sub" id="bd-date-display"></div>
+    <div style="margin-top:14px;display:flex;gap:16px;flex-wrap:wrap">
+      <div style="text-align:center"><div style="font-family:var(--font-d);font-size:1.4rem;color:var(--gold);font-weight:600" id="bd-stat-tasks">0</div><div style="font-size:0.56rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em">Tasks Today</div></div>
+      <div style="text-align:center"><div style="font-family:var(--font-d);font-size:1.4rem;color:#5abaff;font-weight:600" id="bd-stat-posts">0</div><div style="font-size:0.56rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em">Posts Logged</div></div>
+      <div style="text-align:center"><div style="font-family:var(--font-d);font-size:1.4rem;color:#c770d0;font-weight:600" id="bd-stat-reminders">0</div><div style="font-size:0.56rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em">Reminders</div></div>
+      <div style="text-align:center"><div style="font-family:var(--font-d);font-size:1.4rem;color:var(--cream);font-weight:600" id="bd-stat-notes">0</div><div style="font-size:0.56rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em">Notes</div></div>
+    </div>
+  </div>
+
+  <!-- Quick Capture -->
+  <div class="log-form" style="border-color:rgba(201,168,76,0.25)">
+    <div class="log-form-title">&#9889; Quick Capture</div>
+    <div class="bd-cat-chips" id="bd-cat-chips">
+      <div class="bd-chip on" onclick="selectBdCat('task',this)">&#9989; Task</div>
+      <div class="bd-chip" onclick="selectBdCat('post',this)">&#128241; Post</div>
+      <div class="bd-chip" onclick="selectBdCat('note',this)">&#128161; Note / Idea</div>
+      <div class="bd-chip" onclick="selectBdCat('reminder',this)">&#128276; Reminder</div>
+    </div>
+    <div class="bd-quick-row">
+      <textarea class="bd-input-area" id="bd-input" placeholder="What's on your mind, Mona? Just dump it here..." rows="2"></textarea>
+      <button class="bd-send-btn" onclick="addBrainDump()">&#9889; Dump</button>
+    </div>
+    <!-- Extra fields for Post category -->
+    <div id="bd-post-fields" style="display:none;margin-top:12px">
+      <div class="form-grid-2">
+        <div class="fg"><label class="fl">Post Headline</label><input class="fi" id="bd-post-headline" placeholder="e.g. Acceptance"></div>
+        <div class="fg"><label class="fl">URL (optional, add later)</label><input class="fi" id="bd-post-url" placeholder="https://..."></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter Chips -->
+  <div class="filter-row">
+    <div class="fchip on" onclick="filterBd('all',this)">All</div>
+    <div class="fchip" onclick="filterBd('task',this)">&#9989; Tasks</div>
+    <div class="fchip" onclick="filterBd('post',this)">&#128241; Posts</div>
+    <div class="fchip" onclick="filterBd('note',this)">&#128161; Notes</div>
+    <div class="fchip" onclick="filterBd('reminder',this)">&#128276; Reminders</div>
+    <div class="fchip" onclick="filterBd('done',this)">&#10003; Completed</div>
+  </div>
+
+  <!-- Brain Dump Entries -->
+  <div id="bd-entries"></div>
+
+  <!-- Notification & WhatsApp Settings -->
+  <div class="panel" style="margin-top:24px">
+    <div class="ph">
+      <div class="pt">&#128276; Reminders &amp; Notifications</div>
+    </div>
+    <div class="pb">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+        <div>
+          <div style="font-size:0.78rem;color:var(--cream);font-weight:500">Browser Notifications</div>
+          <div style="font-size:0.62rem;color:var(--muted)">9 AM morning briefing &bull; 9 PM brain dump reminder</div>
+        </div>
+        <button class="slink" id="notif-btn" onclick="enableNotifications()">Enable</button>
+      </div>
+      <div class="whatsapp-setup">
+        <div style="font-size:0.68rem;font-weight:600;color:#25d366;margin-bottom:8px">&#128172; WhatsApp Daily Reminders</div>
+        <div style="font-size:0.65rem;color:var(--muted);line-height:1.7;margin-bottom:12px">
+          Get your tasks sent to WhatsApp at 9 AM &amp; 9 PM via CallMeBot (free).<br>
+          <strong style="color:var(--cream)">One-time setup:</strong> Send this message to +34 644 51 95 23 on WhatsApp:<br>
+          <code style="background:var(--bg4);padding:2px 8px;border-radius:4px;color:var(--gold)">I allow callmebot to send me messages</code><br>
+          Then paste your API key below.
+        </div>
+        <div class="form-grid-2">
+          <div class="fg"><label class="fl">Your Phone (with country code)</label><input class="fi" id="wa-phone" placeholder="+971501234567"></div>
+          <div class="fg"><label class="fl">CallMeBot API Key</label><input class="fi" id="wa-apikey" placeholder="123456"></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="bprim" style="flex:none;padding:9px 18px;font-size:0.72rem" onclick="saveWhatsAppConfig()">Save WhatsApp Config</button>
+          <button class="bsec" style="flex:none;padding:9px 18px;font-size:0.72rem" onclick="testWhatsApp()">Test Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NOTIFICATION BANNER (in-app) -->
+<div class="notif-banner" id="notif-banner">
+  <button class="notif-close" onclick="closeNotifBanner()">&times;</button>
+  <div class="notif-title" id="notif-banner-title"></div>
+  <div class="notif-body" id="notif-banner-body"></div>
+</div>
+
 <!-- FIREBASE SETTINGS MODAL -->
 <div class="mover" id="fb-modal">
   <div class="modal" style="width:540px">
@@ -1489,6 +1629,9 @@ function closeDoc() {
   <button id="bn-content" onclick="go('content',this);syncBnav('bn-content')">
     <span class="ic">&#128241;</span><span class="lb">Content</span>
   </button>
+  <button id="bn-brain" onclick="go('brain',this);syncBnav('bn-brain')">
+    <span class="ic">&#129504;</span><span class="lb">Brain</span>
+  </button>
   <button id="bn-profile" onclick="go('profile',this);syncBnav('bn-profile')">
     <span class="ic">&#128196;</span><span class="lb">Profile</span>
   </button>
@@ -1496,7 +1639,7 @@ function closeDoc() {
 
 <script>
 function syncBnav(activeId) {
-  ['bn-home','bn-tx','bn-re','bn-content','bn-profile','bn-jobs','bn-tasks'].forEach(function(id){
+  ['bn-home','bn-tx','bn-re','bn-content','bn-profile','bn-jobs','bn-tasks','bn-brain'].forEach(function(id){
     var el = document.getElementById(id);
     if(el) el.classList.remove('on');
   });
@@ -1516,6 +1659,8 @@ document.addEventListener('DOMContentLoaded', function(){
   initTaskTracker();
   renderContentLog();
   loadApiKeyFromSession();
+  initBrainDump();
+  initNotifications();
 });
 
 // ══════════════════════════════════════════════
@@ -1601,17 +1746,6 @@ function renderJobs(){
     if(jobFilter==='offer') return s.indexOf('offer')>-1;
     if(jobFilter==='rejected') return s.indexOf('reject')>-1;
     return true;
-  });
-
-  // Sort by date — newest first
-  filtered.sort(function(a,b){
-    function parseJobDate(str){
-      if(!str) return 0;
-      var clean = str.replace(/(st|nd|rd|th)/g,'').trim();
-      var d = new Date(clean + ' 2026');
-      return isNaN(d.getTime()) ? 0 : d.getTime();
-    }
-    return parseJobDate(b.date) - parseJobDate(a.date);
   });
 
   var tbody = document.getElementById('jobs-tbody');
@@ -1989,12 +2123,6 @@ function deleteContentRow(id){
 function renderContentLog(){
   var tbody = document.getElementById('content-tbody');
   if(!tbody) return;
-  // Sort by date — newest first
-  contentEntries.sort(function(a,b){
-    var da = a.date ? new Date(a.date).getTime() : 0;
-    var db = b.date ? new Date(b.date).getTime() : 0;
-    return db - da;
-  });
   tbody.innerHTML = contentEntries.map(function(e,i){
     var stCls = e.status==='Posted'?'posted':(e.status==='Draft'?'draft':'sc');
     var platLbl = e.platform==='Instagram'?'IG':(e.platform==='Both'?'B':'in');
@@ -2062,6 +2190,276 @@ function deleteJobRow(id){
   jobEntries = jobEntries.filter(function(e){return e.id!==id;});
   renderJobs();
   fbSave('jobEntries', jobEntries);
+}
+
+// ══════════════════════════════════════════════
+// ══════════════════════════════════════════════
+// BRAIN DUMP ENGINE
+// ══════════════════════════════════════════════
+var brainDumpEntries = [];
+var bdSelectedCat = 'task';
+var bdFilter = 'all';
+
+function initBrainDump(){
+  var dateEl = document.getElementById('bd-date-display');
+  if(dateEl){
+    var now = new Date();
+    var h = now.getHours();
+    var greeting = h < 12 ? 'Good Morning' : h < 17 ? 'Good Afternoon' : 'Good Evening';
+    var bannerTitle = document.querySelector('.bd-today-title');
+    if(bannerTitle) bannerTitle.innerHTML = (h < 12 ? '&#9728;&#65039;' : h < 17 ? '&#127774;' : '&#127769;') + ' ' + greeting + ', Mona';
+    dateEl.textContent = now.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  }
+  loadWhatsAppConfig();
+  renderBrainDump();
+}
+
+function selectBdCat(cat, el){
+  bdSelectedCat = cat;
+  document.querySelectorAll('#bd-cat-chips .bd-chip').forEach(function(c){c.classList.remove('on')});
+  if(el) el.classList.add('on');
+  var postFields = document.getElementById('bd-post-fields');
+  if(postFields) postFields.style.display = cat === 'post' ? 'block' : 'none';
+  var input = document.getElementById('bd-input');
+  if(input){
+    var placeholders = {task:'What do you need to do tomorrow?',post:'What did you post today?',note:'Any idea, thought, or inspiration...',reminder:'What should you not forget?'};
+    input.placeholder = placeholders[cat] || 'Dump it here...';
+  }
+}
+
+function addBrainDump(){
+  var input = document.getElementById('bd-input');
+  var text = input ? input.value.trim() : '';
+  if(!text){alert('Please enter something first.');return;}
+  var now = new Date();
+  var entry = {
+    id: brainDumpEntries.length > 0 ? Math.max.apply(null, brainDumpEntries.map(function(e){return e.id})) + 1 : 1,
+    cat: bdSelectedCat,
+    text: text,
+    date: now.toISOString(),
+    dateLabel: now.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}),
+    timeLabel: now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}),
+    done: false,
+    url: ''
+  };
+  if(bdSelectedCat === 'post'){
+    var headline = document.getElementById('bd-post-headline');
+    var url = document.getElementById('bd-post-url');
+    if(headline && headline.value.trim()) entry.text = headline.value.trim();
+    if(url) entry.url = url.value.trim();
+    if(headline) headline.value = '';
+    if(url) url.value = '';
+    addContentEntry_data('LinkedIn', entry.text, now.toISOString().split('T')[0], entry.url, 'Posted');
+  }
+  if(bdSelectedCat === 'task'){
+    var tid = taskEntries.length > 0 ? Math.max.apply(null, taskEntries.map(function(e){return e.id})) + 1 : 1;
+    taskEntries.push({id:tid,task:text,category:'Brain Dump',priority:'High',status:'\u23f3 To Do',deadline:'Tomorrow',notes:'From Brain Dump'});
+    renderTasks();
+    fbSave('taskEntries', taskEntries);
+  }
+  brainDumpEntries.unshift(entry);
+  input.value = '';
+  renderBrainDump();
+  fbSave('brainDumpEntries', brainDumpEntries);
+}
+
+function toggleBdDone(id){
+  var e = brainDumpEntries.find(function(x){return x.id===id});
+  if(e) e.done = !e.done;
+  renderBrainDump();
+  fbSave('brainDumpEntries', brainDumpEntries);
+}
+
+function deleteBdEntry(id){
+  brainDumpEntries = brainDumpEntries.filter(function(e){return e.id!==id});
+  renderBrainDump();
+  fbSave('brainDumpEntries', brainDumpEntries);
+}
+
+function editBdEntry(id){
+  var e = brainDumpEntries.find(function(x){return x.id===id});
+  if(!e) return;
+  var el = document.getElementById('bd-text-'+id);
+  if(!el) return;
+  if(el.tagName === 'DIV'){
+    var ta = document.createElement('textarea');
+    ta.className = 'bd-card-edit';
+    ta.id = 'bd-text-'+id;
+    ta.value = e.text + (e.url ? '\n' + e.url : '');
+    el.replaceWith(ta);
+    ta.focus();
+    var btn = document.getElementById('bd-edit-btn-'+id);
+    if(btn){btn.textContent = '\u2713 Save';btn.onclick = function(){saveBdEdit(id)};}
+  }
+}
+
+function saveBdEdit(id){
+  var e = brainDumpEntries.find(function(x){return x.id===id});
+  if(!e) return;
+  var ta = document.getElementById('bd-text-'+id);
+  if(ta){
+    var lines = ta.value.split('\n');
+    e.text = lines[0] || e.text;
+    if(lines[1] && lines[1].indexOf('http') === 0) e.url = lines[1];
+  }
+  renderBrainDump();
+  fbSave('brainDumpEntries', brainDumpEntries);
+}
+
+function filterBd(type, btn){
+  bdFilter = type;
+  document.querySelectorAll('#page-brain .fchip').forEach(function(b){b.classList.remove('on')});
+  if(btn) btn.classList.add('on');
+  renderBrainDump();
+}
+
+function renderBrainDump(){
+  var container = document.getElementById('bd-entries');
+  if(!container) return;
+  var filtered = brainDumpEntries.filter(function(e){
+    if(bdFilter === 'all') return !e.done;
+    if(bdFilter === 'done') return e.done;
+    return e.cat === bdFilter && !e.done;
+  });
+  var catStyles = {task:{cls:'bd-cat-task',label:'Task'},post:{cls:'bd-cat-post',label:'Post'},note:{cls:'bd-cat-note',label:'Note'},reminder:{cls:'bd-cat-reminder',label:'Reminder'}};
+  container.innerHTML = filtered.length === 0 ?
+    '<div style="text-align:center;padding:40px;color:var(--muted2);font-size:0.78rem">'+(bdFilter==='done'?'No completed items yet.':'No entries yet. Start dumping!')+'</div>' :
+    filtered.map(function(e){
+      var s = catStyles[e.cat] || catStyles.note;
+      var doneStyle = e.done ? 'opacity:0.5;text-decoration:line-through;' : '';
+      return '<div class="bd-card">'+
+        '<div class="bd-card-actions">'+
+          (e.cat==='task'||e.cat==='reminder' ? '<button class="bd-card-btn'+(e.done?' done-btn':'')+'" onclick="toggleBdDone('+e.id+')">'+(e.done?'&#10003; Done':'Mark Done')+'</button>' : '')+
+          '<button class="bd-card-btn" id="bd-edit-btn-'+e.id+'" onclick="editBdEntry('+e.id+')">&#9998; Edit</button>'+
+          '<button class="bd-card-btn" onclick="deleteBdEntry('+e.id+')" style="color:#e05555">&#10005;</button>'+
+        '</div>'+
+        '<span class="bd-card-cat '+s.cls+'">'+s.label+'</span>'+
+        '<div class="bd-card-text" id="bd-text-'+e.id+'" style="'+doneStyle+'">'+e.text+'</div>'+
+        (e.url ? '<a href="'+e.url+'" target="_blank" style="font-size:0.65rem;color:var(--gold);text-decoration:none;display:inline-block;margin-bottom:4px">'+e.url+' &#8599;</a>' : '')+
+        '<div class="bd-card-meta">'+e.dateLabel+' at '+e.timeLabel+'</div>'+
+      '</div>';
+    }).join('');
+  var today = new Date().toISOString().split('T')[0];
+  var todayEntries = brainDumpEntries.filter(function(e){return e.date.split('T')[0]===today});
+  var el;
+  el = document.getElementById('bd-stat-tasks'); if(el) el.textContent = todayEntries.filter(function(e){return e.cat==='task'}).length;
+  el = document.getElementById('bd-stat-posts'); if(el) el.textContent = todayEntries.filter(function(e){return e.cat==='post'}).length;
+  el = document.getElementById('bd-stat-reminders'); if(el) el.textContent = todayEntries.filter(function(e){return e.cat==='reminder'}).length;
+  el = document.getElementById('bd-stat-notes'); if(el) el.textContent = todayEntries.filter(function(e){return e.cat==='note'}).length;
+}
+
+// ══════════════════════════════════════════════
+// NOTIFICATIONS ENGINE
+// ══════════════════════════════════════════════
+var _notifEnabled = false;
+var _notifLastMorning = '';
+var _notifLastEvening = '';
+
+function initNotifications(){
+  if('Notification' in window && Notification.permission === 'granted'){
+    _notifEnabled = true;
+    var btn = document.getElementById('notif-btn');
+    if(btn){btn.textContent = '\u2713 Enabled'; btn.style.borderColor = 'rgba(76,175,130,0.3)'; btn.style.color = '#4caf82';}
+  }
+  setInterval(checkScheduledNotifications, 60000);
+  setTimeout(checkScheduledNotifications, 3000);
+}
+
+function enableNotifications(){
+  if(!('Notification' in window)){alert('Your browser does not support notifications.');return;}
+  Notification.requestPermission().then(function(perm){
+    if(perm === 'granted'){
+      _notifEnabled = true;
+      var btn = document.getElementById('notif-btn');
+      if(btn){btn.textContent = '\u2713 Enabled'; btn.style.borderColor = 'rgba(76,175,130,0.3)'; btn.style.color = '#4caf82';}
+      new Notification('Mona Command Centre', {body:'Notifications enabled! Reminders at 9 AM & 9 PM.'});
+    }
+  });
+}
+
+function checkScheduledNotifications(){
+  var now = new Date();
+  var h = now.getHours();
+  var m = now.getMinutes();
+  var dateKey = now.toISOString().split('T')[0];
+  if(h === 9 && m === 0 && _notifLastMorning !== dateKey){
+    _notifLastMorning = dateKey;
+    showMorningBriefing();
+  }
+  if(h === 21 && m === 0 && _notifLastEvening !== dateKey){
+    _notifLastEvening = dateKey;
+    showEveningReminder();
+  }
+}
+
+function showMorningBriefing(){
+  var tasks = brainDumpEntries.filter(function(e){return e.cat==='task' && !e.done});
+  var reminders = brainDumpEntries.filter(function(e){return e.cat==='reminder' && !e.done});
+  var body = '';
+  if(tasks.length > 0) body += 'Tasks: ' + tasks.map(function(t){return t.text}).join(', ') + '\n';
+  if(reminders.length > 0) body += 'Reminders: ' + reminders.map(function(r){return r.text}).join(', ');
+  if(!body) body = 'No pending tasks. Enjoy your day!';
+  if(_notifEnabled && 'Notification' in window && Notification.permission === 'granted'){
+    new Notification('Good Morning, Mona!', {body: body});
+  }
+  showNotifBanner('Good Morning, Mona! \u2600\ufe0f', body.replace(/\n/g,'<br>'));
+  sendWhatsAppReminder('Good Morning Mona!\n' + body);
+}
+
+function showEveningReminder(){
+  var body = 'Time for your nightly brain dump. Open Command Centre and log your tasks for tomorrow.';
+  if(_notifEnabled && 'Notification' in window && Notification.permission === 'granted'){
+    new Notification('Evening Brain Dump', {body: body});
+  }
+  showNotifBanner('Evening Brain Dump \ud83c\udf19', body);
+  sendWhatsAppReminder('Hey Mona!\n' + body);
+}
+
+function showNotifBanner(title, body){
+  var banner = document.getElementById('notif-banner');
+  var tEl = document.getElementById('notif-banner-title');
+  var bEl = document.getElementById('notif-banner-body');
+  if(tEl) tEl.textContent = title;
+  if(bEl) bEl.innerHTML = body;
+  if(banner){banner.style.display = 'block';setTimeout(function(){banner.style.display='none'},15000);}
+}
+function closeNotifBanner(){var b=document.getElementById('notif-banner');if(b)b.style.display='none';}
+
+// ══════════════════════════════════════════════
+// WHATSAPP (CallMeBot) INTEGRATION
+// ══════════════════════════════════════════════
+var _waPhone = '';
+var _waApiKey = '';
+
+function saveWhatsAppConfig(){
+  var phone = document.getElementById('wa-phone').value.trim();
+  var key = document.getElementById('wa-apikey').value.trim();
+  if(!phone || !key){alert('Please enter both phone number and API key.');return;}
+  _waPhone = phone;
+  _waApiKey = key;
+  try{localStorage.setItem('mona_wa_phone',phone);localStorage.setItem('mona_wa_apikey',key);}catch(e){}
+  alert('WhatsApp config saved! Click "Test Message" to verify.');
+}
+
+function loadWhatsAppConfig(){
+  try{
+    _waPhone = localStorage.getItem('mona_wa_phone') || '';
+    _waApiKey = localStorage.getItem('mona_wa_apikey') || '';
+    if(_waPhone){var el=document.getElementById('wa-phone');if(el)el.value=_waPhone;}
+    if(_waApiKey){var el2=document.getElementById('wa-apikey');if(el2)el2.value=_waApiKey;}
+  }catch(e){}
+}
+
+function sendWhatsAppReminder(message){
+  if(!_waPhone || !_waApiKey) return;
+  var url = 'https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent(_waPhone)+'&text='+encodeURIComponent(message)+'&apikey='+encodeURIComponent(_waApiKey);
+  fetch(url,{mode:'no-cors'}).catch(function(e){console.log('WhatsApp send error:',e);});
+}
+
+function testWhatsApp(){
+  if(!_waPhone || !_waApiKey){alert('Please save your WhatsApp config first.');return;}
+  sendWhatsAppReminder('Hello Mona! Your Command Centre WhatsApp reminders are working. You will receive task briefings at 9 AM and brain dump reminders at 9 PM.');
+  alert('Test message sent! Check your WhatsApp in a few seconds.');
 }
 
 // ══════════════════════════════════════════════
@@ -2177,6 +2575,10 @@ function connectFirebase(config) {
       if(_fbIgnoreNext['contentEntries']){ _fbIgnoreNext['contentEntries'] = false; return; }
       if(data) { contentEntries = data; renderContentLog(); }
     });
+    fbListen('brainDumpEntries', function(data){
+      if(_fbIgnoreNext['brainDumpEntries']){ _fbIgnoreNext['brainDumpEntries'] = false; return; }
+      if(data) { brainDumpEntries = data; renderBrainDump(); }
+    });
 
     hideM('fb-modal');
   } catch(e) {
@@ -2188,7 +2590,7 @@ function connectFirebase(config) {
 // ── Seed Firebase with local data if the path is empty ──
 function fbSeedIfEmpty() {
   if(!_fbDb) return;
-  var datasets = {jobEntries: jobEntries, taskEntries: taskEntries, contentEntries: contentEntries};
+  var datasets = {jobEntries: jobEntries, taskEntries: taskEntries, contentEntries: contentEntries, brainDumpEntries: brainDumpEntries};
   Object.keys(datasets).forEach(function(key){
     _fbDb.ref('commandCentre/' + key).once('value').then(function(snap){
       if(!snap.exists()){
@@ -2200,6 +2602,7 @@ function fbSeedIfEmpty() {
         if(key === 'jobEntries'){ jobEntries = data; renderJobs(); }
         if(key === 'taskEntries'){ taskEntries = data; renderTasks(); }
         if(key === 'contentEntries'){ contentEntries = data; renderContentLog(); }
+        if(key === 'brainDumpEntries'){ brainDumpEntries = data; renderBrainDump(); }
       }
     });
   });
